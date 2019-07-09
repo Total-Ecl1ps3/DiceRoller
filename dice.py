@@ -12,6 +12,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-v", "--debug", help="Enable debug mode", action="store_true")
 parser.add_argument("-sr", "--statroll", help="Do a stat roll (4d6r1k3)", action="store_true")
 parser.add_argument("-d", "--dicecode", help="Specify dicecode at launch (Example=dice.py --dicecode 4d20+69")
+parser.add_argument("-q", "--quiet", help="Don't display the induvidual dice rolls, only the total.", action="store_true")
 args = parser.parse_args()
 
 # STAT ROLL 4d6r1k3
@@ -109,11 +110,12 @@ else:
 	if args.debug == True:
 		print('k not specified, skipping...')
 	
-print('Dice Rolls: '+ str(dicearray))	
 if '+' in dicecode:
 	sdiceplus = re.search('(?<=\+)\d+', dicecode)
 	diceplus = int(sdiceplus.group())
 	print('Modifier: ' + sdiceplus.group())	
 	print('Total: ' + str(sum(dicearray) + diceplus))
 else:
+	if args.quiet != True:
+		print('Dice Rolls: '+ str(dicearray))	
 	print('Total: ' + str(sum(dicearray)))

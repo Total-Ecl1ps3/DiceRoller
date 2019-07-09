@@ -38,8 +38,9 @@ ___
 ### Supported flags w/ examples
 `-d` / `--dicecode` - Define the dicecode/standard dice notation at launch
 ```
-[total_ecl1ps3@potato ~]$ ./dice.py -d 8d20
-Dice Rolls: [12, 10, 1, 8, 3, 15, 3, 17]
+[total_ecl1ps3@potato ~]$ ./dice.py -d 8d20+4
+Modifier: 4
+Dice Rolls: [12, 10, 1, 8, 3, 11, 3, 17]
 Total: 69
 ```
 ___
@@ -85,6 +86,13 @@ Charisma: 11
 Mod: 0
 ```
 
+___
+`-q` / `--quiet` - Hide the induvidual dice rolls, helpful for those rolls where you roll more than 20-ish dice.  
+```
+[total_ecl1ps3@potato ~]$ ./dice.py -d 10000d20r10 -q
+Total: 154659
+
+```
 ___
 `-h` / `--help` - Get some help! (Print help message)  
 ```
