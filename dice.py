@@ -109,11 +109,11 @@ else:
 	if args.debug == True:
 		print('k not specified, skipping...')
 	
+print('Dice Rolls: '+ str(dicearray))	
 if '+' in dicecode:
 	sdiceplus = re.search('(?<=\+)\d+', dicecode)
 	diceplus = int(sdiceplus.group())
-	dicearray.append(diceplus)
-	print('Modifier: ' + sdiceplus.group())
-	
-print('Dice Rolls: '+ str(dicearray))	
-print('Total: ' + str(sum(dicearray)))
+	print('Modifier: ' + sdiceplus.group())	
+	print('Total: ' + str(sum(dicearray) + diceplus))
+else:
+	print('Total: ' + str(sum(dicearray)))
