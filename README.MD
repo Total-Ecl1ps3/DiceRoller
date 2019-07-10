@@ -9,7 +9,15 @@ This is a simple dice roller for DnD written in python.
 It accepts Standard dice notation (i.e. `4d6r1k3`), and converts this into a dice roll.  
 ___
 ### How do i use it?
-It's pretty simple, just start the program with `./dice.py` and type in your roll in standard dice notation, then watch as the program spits out your roll!  
+It's pretty simple, just start the program with `./dice.py` and type in your roll in standard dice notation, then watch as the program spits out your roll! 
+#### Example:
+```
+[total_ecl1ps3@potato ~]$ ./dice.py 
+Enter dice code: 1d6+4
+Modifier: +4
+Dice Rolls: [6]
+Total: 10
+```
 ___
 ### What else does it do?
 It can roll stats for you, and calculate your modifier based on the roll!  
@@ -36,6 +44,29 @@ Mod: 0
 ```
 ___
 ### Supported flags w/ examples
+`-i` / `--interactive` - Start DiceRoller in interactive mode, so you can keep entering DiceCodes without having to re-run the program! (Exit with CTRL+C)
+```
+[total_ecl1ps3@potato ~]$ ./dice.py -i
+Enter dice code: 1d20+4
+Modifier: +4
+Dice Rolls: [19]
+Total: 23
+
+Enter dice code: 2d80-20
+Modifier: -20
+Dice Rolls: [46, 7]
+Total: 33
+
+Enter dice code: 2d1-10
+Modifier: -10
+Dice Rolls: [1, 1]
+Total: -8
+
+Enter dice code: ^C
+Bye!
+
+```
+___
 `-d` / `--dicecode` - Define the dicecode/standard dice notation at launch
 ```
 [total_ecl1ps3@potato ~]$ ./dice.py -d 8d20+4
