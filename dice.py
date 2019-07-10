@@ -5,6 +5,7 @@ import argparse
 import math
 import os
 import signal
+import readline
 seed_bytes = 2048
 random.seed(os.urandom(seed_bytes))
 
