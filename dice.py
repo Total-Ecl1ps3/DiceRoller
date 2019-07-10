@@ -78,7 +78,7 @@ def RollTheDice():
 		dicereroll = int(sdicereroll.group())
 		if dicereroll >= diceval:
 			print('r cant >= d value, wtf dude?')
-			exit()
+			return;
 	
 		if args.debug == True:
 			print('DiceArray before rerolls: ' + str(dicearray))
@@ -97,7 +97,7 @@ def RollTheDice():
 		dicekeep = int(sdicekeep.group())
 		if dicekeep >= numdice:
 			print('k cant >= ammount of dice to roll, wtf dude?')
-			exit()
+			return;
 	
 		if args.debug == True:
 			print('Keep this many dice after roll: ' + sdicekeep.group())
