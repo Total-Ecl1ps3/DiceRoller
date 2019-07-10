@@ -116,20 +116,20 @@ def RollTheDice():
 		sdiceplus = re.search('(?<=\+)\d+', dicecode)
 		diceplus = int(sdiceplus.group())
 		print('Modifier: +' + sdiceplus.group())	
-		print('Total: ' + str(sum(dicearray) + diceplus))
 		if args.quiet != True:
 			print('Dice Rolls: '+ str(dicearray))	
+		print('Total: ' + str(sum(dicearray) + diceplus) + '\n')
 	elif '-' in dicecode:
 		sdiceminus = re.search('(?<=\-)\d+', dicecode)
 		diceminus = int(sdiceminus.group())
 		print('Modifier: -' + sdiceminus.group())	
-		print('Total: ' + str(sum(dicearray) - diceminus))
 		if args.quiet != True:
 			print('Dice Rolls: '+ str(dicearray))	
+		print('Total: ' + str(sum(dicearray) - diceminus) + '\n')
 	else:
 		if args.quiet != True:
 			print('Dice Rolls: '+ str(dicearray))	
-		print('Total: ' + str(sum(dicearray)))
+		print('Total: ' + str(sum(dicearray)) + '\n')
 	return;
 try:
 	if args.interactive:
